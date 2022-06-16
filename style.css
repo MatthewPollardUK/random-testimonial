@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+html, body {
+  background: url(images/testimonial-background.png);
+  font-size: 20px;
+  color: 	#666666;
+}
+.new-quote-generate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1.main-title {
+    font-family: 'Indie Flower', cursive;
+    font-size: 8rem;
+    color: #4ba9c8;
+    margin-top: 20px;
+}
+
+button.new-quote-button {
+    margin-top: 40px;
+    font-size: 3.8rem;
+    text-transform: uppercase;
+}
+
+.main {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 70px;
+}
