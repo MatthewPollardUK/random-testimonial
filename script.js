@@ -1,8 +1,10 @@
 const changeButton = document.getElementById('change-quote');
+const testimonialName = document.getElementById('test-name');
+const mainText = document.getElementById('main-text');
+const mainAvatar = document.getElementById('main-avatar');
 
 let randomId;
 let newId;
-
 
 
 
@@ -30,6 +32,15 @@ const dataRetrieve = () => {
   let urlToUse = `https://testimonialapi.toolcarton.com/api/${randomId}`;
 fetch(urlToUse, requestOptions)
  .then(response => response.text())
- .then(result => console.log(result))
+ .then(result => {
+
+let jParsed = JSON.parse(result);
+
+mainText.innerHTML = `<p class="test-message"> ${jParsed.message} </p>
+                   <b> ${jParsed.name} </b>
+                    <p> ${jParsed.location} </p>`;
+mainAvatar.innerHTML = ` <img src="${jParsed.avatar}" alt="Person image">`
+
+ })
  .catch(error => console.log('error', error));
 }
